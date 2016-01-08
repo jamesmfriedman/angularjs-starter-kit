@@ -1,0 +1,32 @@
+{
+  "name": "angular-starter-kit",
+  "version": "1.5.0-rc.0",
+  "description": "A starter kit for Angular",
+  "repository": "https://github.com/jamesmfriedman/angular-starter-kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Friedman, Shawn Rice",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/router": "0.0.1",
+    "angular": "^1.5.0-rc.0",
+    "angular-animate": "^1.5.0-rc.0",
+    "angular-sanitize": "^1.5.0-rc.0",
+    "angular-touch": "^1.5.0-rc.0",
+    "autoprefixer-loader": "^3.1.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "import-glob-loader": "^1.1.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
+    "node-sass": "^3.4.2",
+    "normalize.css": "^3.0.3",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
