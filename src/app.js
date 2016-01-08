@@ -3,7 +3,7 @@ var app = angular.module('App', [
 	'ngTouch',
 	'ngSanitize',
 
-	'App.services',
+	'App.common',
 	'App.directives',
 	'App.components'
 ]);

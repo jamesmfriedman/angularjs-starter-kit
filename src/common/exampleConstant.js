@@ -1,0 +1,1 @@
+angular.module('App.common').constant('EXAMPLE_CONSTANT', 'Hello World');

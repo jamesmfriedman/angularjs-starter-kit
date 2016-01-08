@@ -1,1 +1,0 @@
-angular.module('App.services').constant('EXAMPLE_CONSTANT', 'Hello World');

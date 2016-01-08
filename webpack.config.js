@@ -1,21 +1,8 @@
-// Some setup
-var fs = require('fs');
-var path = require('path');
+var APP_NAME = 'app';
+
 var webpack = require('webpack');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-
-function HelloWorldPlugin(options) {
-  // Setup the plugin instance with options...
-}
-
-HelloWorldPlugin.prototype.apply = function(compiler) {
-	
-	compiler.plugin('compilation', function() {
-		console.log('Compiled', new Date().toLocaleTimeString());
-	});
-};
 
 function WebpackConfig() {
 	this.config = {};
@@ -52,9 +39,7 @@ function WebpackConfig() {
 	this.generalConfig = function() {
 		this.config = {
 			context: __dirname,
-			entry: {
-				app: ['./src/main', './src/main.scss']
-			},
+			entry: {}, // set below
 			output: {
 				path: './public/dist',
 				filename: '[name].js', // no hash in main.js because index.html is a static page
@@ -67,7 +52,7 @@ function WebpackConfig() {
 				loaders: [
 					{
 				        test: /\.scss$/,
-				        loaders: ['style/url','file?name=/app.css?[hash]', 'autoprefixer', 'sass', 'import-glob']
+				        loaders: ['style/url','file?name=/'+ APP_NAME +'.css?[hash]', 'autoprefixer', 'sass', 'import-glob']
 				    }
 				]
 			},
@@ -76,6 +61,8 @@ function WebpackConfig() {
 				new HelloWorldPlugin()
 			]
 		}
+
+		this.config.entry[APP_NAME] = ['./src/main', './src/main.scss'];
 	}
 
 	/**
@@ -83,7 +70,7 @@ function WebpackConfig() {
 	 */
 	this.devConfig = function() {
 		// watch html files
-		this.config.entry.app.unshift('./src/templates');
+		this.config.entry[APP_NAME].unshift('./src/templates');
 		this.config.module.loaders.push({
 		   test: /\.html$/,
 		   loader: 'raw-loader'
@@ -94,8 +81,8 @@ function WebpackConfig() {
 		this.config.output.sourceMapFilename = '[name].map.js';
 		
 		// hot mode
-		this.config.entry.app.unshift('webpack-dev-server/client?http://' + this.hostPort);
-		this.config.entry.app.unshift('webpack/hot/dev-server');
+		this.config.entry[APP_NAME].unshift('webpack-dev-server/client?http://' + this.hostPort);
+		this.config.entry[APP_NAME].unshift('webpack/hot/dev-server');
 		this.config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
 		
 		// dev server conf
@@ -135,5 +122,15 @@ function WebpackConfig() {
 	this.constructor();
 }
 
+function HelloWorldPlugin(options) {
+  // Setup the plugin instance with options...
+}
+
+HelloWorldPlugin.prototype.apply = function(compiler) {
+	
+	compiler.plugin('compilation', function() {
+		console.log('Compiled', new Date().toLocaleTimeString());
+	});
+};
 
 module.exports = new WebpackConfig().config;

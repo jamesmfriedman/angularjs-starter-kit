@@ -1,4 +1,4 @@
-angular.module('App.services').service('exampleProvider', function(){
+angular.module('App.common').service('exampleProvider', function(){
 	var text = null;
 
     this.setText = function (textString) {
