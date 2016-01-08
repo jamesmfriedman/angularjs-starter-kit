@@ -89,7 +89,7 @@ function WebpackConfig() {
 		this.config.devServer = {
 			contentBase: __dirname + '/public',
 			headers: { 
-				//To add headers to the dev server "Access-Control-Allow-Origin": '*', 
+				"Access-Control-Allow-Origin": '*', 
 			},
 			hot: true,
 			noInfo: true,
