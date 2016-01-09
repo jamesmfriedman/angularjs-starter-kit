@@ -10,7 +10,6 @@
   "author": "James Friedman, Shawn Rice",
   "license": "ISC",
   "devDependencies": {
-    "@angular/router": "0.0.1",
     "angular": "^1.5.0-rc.0",
     "angular-animate": "^1.5.0-rc.0",
     "angular-sanitize": "^1.5.0-rc.0",

@@ -8,6 +8,10 @@ var app = angular.module('App', [
 	'App.components'
 ]);
 
+app.config(function($locationProvider){
+	$locationProvider.html5Mode(true);	
+});
+
 app.run(function($rootScope){
 	$rootScope.hello = 'Hello World!';
 });

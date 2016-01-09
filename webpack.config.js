@@ -87,6 +87,7 @@ function WebpackConfig() {
 		
 		// dev server conf
 		this.config.devServer = {
+			historyApiFallback: true,
 			contentBase: __dirname + '/public',
 			headers: { 
 				"Access-Control-Allow-Origin": '*', 
