@@ -1,4 +1,6 @@
 node_modules/
+public/dist/
+public/index.html
 .DS_Store
-angular-starter-kit.sublime-workspace
-angular-starter-kit.sublime-project
+*.sublime-workspace
+*.sublime-project
