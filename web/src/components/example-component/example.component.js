@@ -1,8 +1,8 @@
 angular.module('App.components').component('exampleComponent', {
 	bindings: {},
-	templateUrl: '/templates/exampleComponent.html', 
+	template: require('./example.component.html'), 
 	controllerAs: 'exampleComponent',
-	controller: function($scope) {
+	controller: function() {
 
 	}
 });

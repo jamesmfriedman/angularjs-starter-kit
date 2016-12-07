@@ -1,5 +1,5 @@
 node_modules/
-public/dist/
+public/dist/*
 public/index.html
 .DS_Store
 *.sublime-workspace

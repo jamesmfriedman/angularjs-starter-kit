@@ -1,6 +1,5 @@
 var app = angular.module('App', [
 	'ngAnimate',
-	'ngTouch',
 	'ngSanitize',
 
 	'App.common',
@@ -14,4 +13,8 @@ app.config(function($locationProvider){
 
 app.run(function($rootScope){
 	$rootScope.hello = 'Hello World!';
+});
+
+angular.element(document).ready(function() {
+	angular.bootstrap(document, ['App']);
 });

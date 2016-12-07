@@ -1,0 +1,22 @@
+{
+    "boss": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "loopfunc": true,
+    "expr": true,
+    "immed": true,
+    "noarg": true,
+    "quotmark": "single",
+    "undef": true,
+    "unused": true,
+    "node": true,
+    "esversion": 6,
+    "laxcomma": true,
+    "jasmine": true,
+    "browser": true,
+    "worker": true,
+    "globals": {
+        "angular": true,
+        "inject": true
+    }
+}

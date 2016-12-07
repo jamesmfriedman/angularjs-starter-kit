@@ -4,5 +4,5 @@ angular.module('App.directives').directive('exampleDirective', function(){
 		link: function(scope, el, attrs) {
 
 		}
-	}
+	};
 });

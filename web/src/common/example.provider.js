@@ -1,3 +1,7 @@
+function Message(text) {
+    this.text = text;
+}
+
 angular.module('App.common').service('exampleProvider', function(){
 	var text = null;
 
