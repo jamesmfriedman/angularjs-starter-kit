@@ -17,10 +17,6 @@ hostPort = host + ':' + port;
 
 // watch html files
 config.entry.app.unshift('../src/templates');
-config.module.loaders.push({
-   test: /\.html$/,
-   loader: 'raw-loader'
-});
 
 // source maps
 config.devtool = '#source-map';
@@ -33,9 +29,7 @@ config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
 
 // dev server conf
 config.devServer = {
-	historyApiFallback: {
-		index: '/dist/'
-	},
+	historyApiFallback: true,
 	contentBase: './public',
 	headers: { 
 		'Access-Control-Allow-Origin': '*'

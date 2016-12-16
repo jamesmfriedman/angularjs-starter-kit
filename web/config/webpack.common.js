@@ -21,9 +21,9 @@ module.exports = {
 		polyfills: ['../src/polyfills']
 	},
 	output: {
-		path: './public/dist/',
-		filename: '[name].js',
-		publicPath: '/dist/'
+		path: './public/',
+		filename: 'dist/[name].js',
+		publicPath: '/'
     },
     resolve: {
 		modulesDirectories: ['../src', 'web_modules', 'node_modules']
@@ -57,7 +57,7 @@ module.exports = {
       	}),
 
       	new HtmlWebpackPlugin({
-            filename: '../index.html',
+            filename: 'index.html',
             template: '../src/index.html',
             chunks: ['commons', 'polyfills', 'vendors', 'styles', 'app'],
             hash: process.env.NODE_ENV === 'DEV' ? false : true
