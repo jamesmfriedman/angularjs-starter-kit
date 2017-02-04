@@ -5,29 +5,31 @@
   "repository": "https://github.com/jamesmfriedman/angular-starter-kit",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV='DEV' && webpack-dev-server",
-    "build": "export NODE_ENV='PROD' && webpack",
-    "test": "export NODE_ENV='TEST' && karma start --single-run",
-    "test:watch": "export NODE_ENV='TEST' && karma start"
+    "start": "export NODE_ENV='dev' BUILD_ENV='dev' && webpack-dev-server --hot",
+    "dev": "npm start",
+    "dev:min": "export NODE_ENV='dev' BUILD_ENV='min' && webpack-dev-server --hot",
+    "build": "export NODE_ENV='prod' BUILD_ENV='min' && webpack",
+    "test": "export NODE_ENV='test' BUILD_ENV='min' && karma start --single-run",
+    "test:watch": "export NODE_ENV='test' BUILD_ENV='min' && karma start"
   },
   "author": "James Friedman",
   "license": "ISC",
   "devDependencies": {
-    "angular": "^1.5.9",
-    "angular-animate": "^1.5.9",
-    "angular-mocks": "^1.5.9",
-    "angular-sanitize": "^1.5.9",
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
     "css-loader": "^0.26.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.24.1",
     "import-glob-loader": "^1.1.0",
     "jasmine-core": "^2.5.2",
-    "karma": "^1.3.0",
+    "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
+    "karma-jasmine": "^1.1.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^1.8.0",
+    "karma-webpack": "^2.0.2",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "ng-cache-loader": "0.0.21",
     "node-sass": "^3.13.0",
@@ -36,7 +38,8 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0",
+    "webpack-merge": "^2.6.1"
   }
 }
